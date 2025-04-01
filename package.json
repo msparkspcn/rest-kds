@@ -1,0 +1,95 @@
+{
+  "name": "srkds",
+  "private": true,
+  "version": "0.0.0",
+  "description": "휴게소 kds",
+  "author": "Secta9ine",
+  "type": "module",
+  "main": "src/electron/main.ts",
+  "scripts": {
+    "dev": "vite",
+    "start1": "concurrently \\\"vite\\\" \\\"cross-env BROWSER=none src/electron public/electron.mjs\\\"",
+    "start2": "src/electron public/electron.mjs",
+    "build": "tsc -b && vite build &electron-builder",
+    "buildwin": "vite build &electron-builder --win --x64",
+    "lint": "eslint .",
+    "electron-build": "electron-builder",
+    "electron": "src/electron .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/vite": "^4.0.17",
+    "@types/node": "^22.13.14",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "electron-is-dev": "^3.0.1",
+    "lucide-react": "^0.486.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.1.0",
+    "tailwindcss": "^4.0.14",
+    "tw-animate-css": "^1.2.5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "zustand": "^5.0.3"
+  },
+  "build": {
+    "appId": "kr.co.secta9ine.srkds",
+    "productName": "srkds",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron.js"
+    ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@tailwindcss/postcss": "^4.0.14",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.1.2",
+    "electron-builder": "^25.1.8",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "postcss": "^8.5.3",
+    "react-router": "^7.3.0",
+    "react-router-dom": "^7.3.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.4",
+    "wait-on": "^8.0.3"
+  }
+}

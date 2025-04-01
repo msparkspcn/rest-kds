@@ -1,0 +1,8 @@
+{
+  "appId": "kr.co.secta9ine.srkds",
+  "productName": "MyElectronApp",
+  "win": {
+    "target": "nsis",
+    "icon": "public/icon.png"
+  }
+}
